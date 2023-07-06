@@ -59,6 +59,34 @@
       // ❗ WARNING: except for `getAllReversed`, methods must respect the order of the integers
       // ❗ WARNING: note that none of the methods actually mutate the `ints` property
 
+      constructor() {
+        this.ints = [...arguments]
+      }
+      getAll() {
+        return this.ints
+      }
+      getEvens() {
+        return this.ints.filter(int => int % 2 === 0)
+      }
+      getNegatives() {
+        return this.ints.filter(int => int < 0)
+      }
+      getAllSquared() {
+        return this.ints.map(int => int * int)
+      }
+      pop() {
+        return this.ints.pop()
+      }
+      push(int) {
+        this.ints.push(int)
+        return this.ints
+      }
+      getEveryNth(n) {
+        return this.ints.filter((int, i) => i % n === 0)
+      }
+      getAllReversed() {
+        return this.ints.reverse()
+      }
     }
 
     // 👉 CHALLENGE 2 NerfGun
