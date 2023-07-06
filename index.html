@@ -156,6 +156,21 @@
       // 🌟 HINT: remember about the `slice` method which strings and arrays have
       // ❗ Feel free to implement `back`, although this is not required nor graded
 
+      constructor(text, charsPerPage) {
+        this.text = text
+        this.charsPerPage = charsPerPage
+        this.currentPage = 0
+      }
+      next() {
+        if (this.currentPage >= this.text.length) {
+          return null
+        } else {
+          const page = this.text.slice(this.currentPage, this.currentPage + this.charsPerPage)
+          this.currentPage += this.charsPerPage
+          return page
+        }
+      }
+      
     }
 
     // 👉 CHALLENGE 4 AntFarm
